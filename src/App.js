@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Toast from "./components/Toast";
 
 function App() {
+  const messageArray = [
+    {
+      title: "success",
+      text: "Right On!",
+    },
+    {
+      title: "success",
+      text: "Right On!",
+    },
+    {
+      title: "warning",
+      text: "Hmmm",
+    },
+    {
+      title: "warning",
+      text: "Hmmm",
+    },
+    {
+      title: "error",
+      text: "oh no!",
+    },
+    {
+      title: "error",
+      text: "oh no!",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Toast title={messageArray[0].title} text={messageArray[0].text} />
+      <Toast title={messageArray[2].title} text={messageArray[2].text} />
+      <Toast title={messageArray[4].title} text={messageArray[4].text} />
     </div>
   );
 }
