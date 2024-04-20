@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="wrapper">
       {messageArray.map((message) => (
-        <Toast title={message.title} text={message.text} />
+        <Toast message={message} />
       ))}
     </div>
   );
