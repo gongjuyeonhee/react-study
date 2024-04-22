@@ -1,7 +1,17 @@
 import React from "react";
 
-const ToastButton = () => {
-  return <button className="toast__button">Dismiss</button>;
+const ToastButton = ({ message }) => {
+  const buttonClickHandler = (title) => {
+    console.log(title);
+  };
+  return (
+    <button
+      className="toast__button"
+      onClick={() => buttonClickHandler(message.title)}
+    >
+      Dismiss
+    </button>
+  );
 };
 
 export default ToastButton;

@@ -35,15 +35,15 @@ function App() {
     <div className="wrapper">
       <Toast message={messageArray[0]}>
         <ToastMessage message={messageArray[0]} />
-        <ToastButton />
+        <ToastButton message={messageArray[0]} />
       </Toast>
       <Toast message={messageArray[2]}>
         <ToastMessage message={messageArray[2]} />
-        <ToastButton />
+        <ToastButton message={messageArray[2]} />
       </Toast>
       <Toast message={messageArray[4]}>
         <ToastMessage message={messageArray[4]} />
-        <ToastButton />
+        <ToastButton message={messageArray[4]} />
       </Toast>
     </div>
   );
