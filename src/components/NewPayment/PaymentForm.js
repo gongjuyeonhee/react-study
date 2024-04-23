@@ -3,28 +3,40 @@ import React, { useState } from "react";
 import "./PaymentForm.css";
 
 const PaymentForm = () => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
-  const [today, setToday] = useState(null);
+  const [objectState, setObjectState] = useState({
+    name: "",
+    price: 0,
+    today: null,
+  });
 
   const textChangeHandler = (event) => {
-    setName(event.target.value);
+    setObjectState((prevState) => ({ ...prevState, name: event.target.value }));
   };
   const numberChangeHandler = (event) => {
-    setPrice(event.target.value);
+    setObjectState((prevState) => ({
+      ...prevState,
+      price: event.target.value,
+    }));
   };
   const dateChangeHandler = (event) => {
-    setToday(event.target.value);
+    setObjectState((prevState) => ({
+      ...prevState,
+      today: event.target.value,
+    }));
   };
   const buttonSubmitHandler = () => {
-    console.log(name, price, today);
+    console.log(objectState.name, objectState.price, objectState.today);
   };
   return (
     <form>
       <div className="new-payment__controls">
         <div className="new-payment__control">
           <label>이름</label>
-          <input type="text" value={name} onChange={textChangeHandler} />
+          <input
+            type="text"
+            value={objectState.name}
+            onChange={textChangeHandler}
+          />
         </div>
         <div className="new-payment__control">
           <label>금액</label>
@@ -32,7 +44,7 @@ const PaymentForm = () => {
             type="number"
             min="0.01"
             step="0.01"
-            value={price}
+            value={objectState.price}
             onChange={numberChangeHandler}
           />
         </div>
@@ -42,7 +54,7 @@ const PaymentForm = () => {
             type="date"
             min="2019-01-01"
             max="2024-12-31"
-            value={today}
+            value={objectState.today}
             onChange={dateChangeHandler}
           />
         </div>
