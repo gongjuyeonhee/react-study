@@ -1,5 +1,5 @@
 .wrapper {
-  background: olive;
+  background: #f1f1f1;
   width: 100vw;
   height: 100vh;
 }
@@ -32,19 +32,20 @@
   background: transparent;
   border: none;
   font-family: inherit;
+  font-size: inherit;
   margin-left: 1rem;
   opacity: 0.5;
   padding: 0;
 }
 
 .toast-success {
-  border-color: green;
+  border-color: #008554;
 }
 
 .toast-warning {
-  border-color: orange;
+  border-color: #ffc627;
 }
 
 .toast-error {
-  border-color: red;
+  border-color: #d14229;
 }
