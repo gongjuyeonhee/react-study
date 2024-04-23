@@ -6,7 +6,7 @@ const PaymentForm = () => {
   const [objectState, setObjectState] = useState({
     name: "",
     price: 0,
-    today: null,
+    today: new Date(),
   });
 
   const textChangeHandler = (event) => {
@@ -24,11 +24,20 @@ const PaymentForm = () => {
       today: event.target.value,
     }));
   };
-  const buttonSubmitHandler = () => {
-    console.log(objectState.name, objectState.price, objectState.today);
+
+  const buttonSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(objectState);
+
+    setObjectState({
+      name: "",
+      price: 0,
+      today: new Date(),
+    });
   };
+
   return (
-    <form>
+    <form onSubmit={buttonSubmitHandler}>
       <div className="new-payment__controls">
         <div className="new-payment__control">
           <label>이름</label>
@@ -60,9 +69,7 @@ const PaymentForm = () => {
         </div>
       </div>
       <div className="new-payment__actions">
-        <button type="button" onClick={buttonSubmitHandler}>
-          결제 추가
-        </button>
+        <button type="submit">결제 추가</button>
       </div>
     </form>
   );
