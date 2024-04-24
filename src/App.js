@@ -14,6 +14,9 @@ function App() {
   ]);
 
   const getPaymentFormData = (data) => {
+    console.log("data", data);
+    console.log("exp", expenses);
+
     setExpenses([
       {
         id: Math.random().toString(),
@@ -21,6 +24,7 @@ function App() {
         amount: data.price,
         date: data.today,
       },
+      ...expenses, //새로운 데이터들 추가해주는 작업
     ]);
   };
 
