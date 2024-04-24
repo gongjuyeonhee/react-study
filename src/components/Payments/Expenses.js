@@ -9,6 +9,7 @@ const Expenses = (props) => {
     <Card className="expenses">
       {props.items.map((item, index) => (
         <ExpenseItem
+          key={item.id}
           id={item.id} //filter 사용시
           index={index} //slice 사용시
           title={item.title}
