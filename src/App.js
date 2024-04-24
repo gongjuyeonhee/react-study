@@ -28,10 +28,21 @@ function App() {
     ]);
   };
 
+  const deleteExpenseItem = (index) => {
+    //filter 사용하려면 id값 받기
+    // const newFilteredArray = expenses.filter((item) => item.id !== id);
+    // setExpenses(newFilteredArray);
+
+    //slice는 index값 받기
+    const beforeArray = expenses.slice(0, index);
+    const afterArray = expenses.slice(index + 1);
+    setExpenses([...beforeArray, ...afterArray]);
+  };
+
   return (
     <>
       <PaymentForm getPaymentFormData={getPaymentFormData} />
-      <Expenses items={expenses} />
+      <Expenses items={expenses} deleteExpenseItem={deleteExpenseItem} />
     </>
   );
 }
